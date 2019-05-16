@@ -1,0 +1,156 @@
+.c-btn {
+    display: inline-block;
+    user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    line-height: 1;
+
+    background-color: transparent;
+    border: 0;
+    outline: none;
+
+    cursor: pointer;
+
+    &:disabled {
+        cursor: default;
+    }
+}
+
+.c-btn--default {
+    @include btn-legacy(
+                    $color-default,
+                    transparent,
+                    $color-text,
+                    darken($color-white, 5%),
+                    $color-white,
+                    $color-text
+    );
+}
+
+.c-btn--block {
+    width: 100%;
+}
+
+.c-btn--primary {
+    @include btn-legacy(
+                    $color-primary,
+                    $color-primary,
+                    $color-white,
+                    lighten($color-primary, 10%),
+                    darken($color-primary, 5%),
+                    $color-white
+    );
+}
+
+.c-btn--lite {
+    @include btn-legacy(
+                    $color-white,
+                    transparent,
+                    $color-white,
+                    darken($color-white, 10%),
+                    $color-white,
+                    $color-text
+    );
+}
+
+.c-btn--menu {
+    @include mq-prop(height, $frame-top-weight);
+    width: 50px;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+.c-btn--reserved-area {
+    @include font-geometric;
+    @include mq-prop(height, $frame-top-weight);
+    padding: 0;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.c-btn--menu,
+.c-btn--reserved-area {
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.3s ease-in-out;
+
+    &.is-visible {
+        transition: color 0.3s ease, transform 0.3s ease-in-out 0.2s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.c-btn--privacy {
+    @include font-geometric;
+    @include mq-prop(height, $frame-weight);
+    font-size: rem(9px);
+    padding: 0;
+    cursor: default;
+
+    transform: translate3d(0, 100%, 0);
+    transition: transform 0.3s ease-in-out;
+
+    &.is-visible {
+        transition: transform 0.3s ease-in-out 0.2s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.c-btn--collections {
+    @include font-geometric;
+    @include mq-prop(height, $frame-weight);
+    padding: 0;
+
+    &:hover {
+        color: $color-primary;
+    }
+}
+
+.c-btn--collections {
+    transform: translate3d(0, 100%, 0);
+    transition: color 0.3s ease, transform 0.3s ease-in-out;
+
+    &.is-visible {
+        transition: color 0.3s ease, transform 0.3s ease-in-out 0.2s;
+        transform: translate3d(0, 0, 0);
+    }
+
+}
+
+.c-btn--frameButton {
+    z-index: z-index(frame) + 1;
+    transform: rotateX(90deg) translate3d(0, 0, 0);
+    opacity: 0;
+    // transition: all 0.3s ease-in-out;
+    transform-origin: 50% 100%;
+}
+
+.c-btn--read-more {
+    @include font-geometric;
+    margin-top: 15px;
+    font-weight: 700;
+    border: 0;
+    background-color: transparent;
+    letter-spacing: 1px;
+    color: $color-primary;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        color: $color-text;
+    }
+}
+
+.c-btn--gray {
+    @include btn-legacy(
+                    $color-gray,
+                    $color-gray,
+                    $color-text,
+                    darken($color-white, 10%),
+                    $color-white,
+                    $color-text
+    );
+}

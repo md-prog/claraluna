@@ -1,0 +1,53 @@
+.o-invitations {
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
+.o-invitations__draggable {
+    position: relative;
+    height: 70vh;
+    display: inline-block;
+
+    white-space: nowrap;
+
+    width: 100%;
+}
+
+.o-invitations__title {
+    @include font-title($color-primary);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    white-space: normal;
+    text-align: center;
+}
+
+.o-invitations__attachment {
+    @include font-geometric;
+    cursor: pointer !important;
+    color: $color-primary;
+}
+
+.o-invitations__desc {
+    max-width: 500px;
+    text-align: center;
+    white-space: normal;
+    padding: 0 $spacer;
+
+    @include mq(s-tablet) {
+        top: calc(50% + 50px);
+    }
+}
+
+.o-invitations__cta {
+    @include font-geometric;
+    font-weight: 700;
+    position: absolute;
+    top: auto;
+    bottom: $spacer * -4;
+}

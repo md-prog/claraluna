@@ -1,0 +1,7 @@
+.o-atelier-container__head,
+.o-atelier-container__footer {
+    position: relative;
+    display: inline-block;
+    height: calc(100% - #{$spacer} * 4);
+    float: left;
+}

@@ -1,0 +1,21 @@
+.c-info-window {
+    padding: 2rem;
+
+    h2,
+    h3 {
+        @include font-geometric;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    div {
+        line-height: 1.5;
+    }
+
+    a {
+        display: block;
+        line-height: 1.5;
+        color: $color-primary;
+        text-decoration: underline;
+    }
+}

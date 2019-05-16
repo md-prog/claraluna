@@ -1,0 +1,472 @@
+/* ==========================================================================
+
+   Utilities
+   ====
+
+   Application wide utilities
+
+   ========================================================================== */
+
+/* ==========================================================================
+   ### Section Title
+
+   ```
+   <p class="u-text--left">Left aligned text</p>
+   <p class="u-text--right">Right aligned text</p>
+   <p class="u-text--center">Centered text</p>
+   <p class="u-text--hide">Hidden text</p>
+   <p class="u-text--ellipsis">This text is one line with ellipsis</p>
+
+   ```
+   ========================================================================== */
+
+.u-text--left {
+    text-align: left;
+}
+
+.u-text--right {
+    text-align: right;
+}
+
+.u-text--center {
+    text-align: center;
+}
+
+.u-text--geometric {
+    @include font-geometric;
+}
+
+.u-text--title {
+    @include font-geometric;
+    font-weight: 800;
+}
+
+.u-text--small {
+    font-size: rem(7px);
+}
+
+//@see bootstrap
+.u-text--hide {
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    font: 0 / 0 a;
+    font-size: 0.1px;
+    text-shadow: none;
+}
+
+.u-white {
+    color: $color-white;
+}
+
+.u-text--ellipsis {
+    @include text-ellipsis;
+}
+
+.u-text--important {
+    font-size: rem(30px);
+    font-weight: 200;
+    margin-top: 0;
+    line-height: 1;
+}
+
+
+/* ==========================================================================
+   ##Box model helpers
+
+   ```
+
+   <div class="u-clearfix">Clearfixed box</div>
+   <div class="u-centered">Centered</div>
+   <div class="u-float--left">Floated left</div>
+   <div class="u-float--right">Floated right</div>
+   <div class="u-clear">Clearing box</div>
+
+   <div class="u-inline">
+    <div>inlined</div>
+    <div>items</div>
+   </div>
+
+   <div class="u-stacked">
+    <span>stacked</span>
+    <span>items</span>
+   </div>
+   ```
+   ========================================================================== */
+
+.u-clearfix,
+.clearfix {
+    @extend %clearfix;
+}
+
+.u-clear {
+    clear: both;
+}
+
+.u-centered {
+    float: none;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.u-float,
+.u-float--left {
+    float: left;
+}
+
+.u-float--right {
+    float: right;
+}
+
+%u-inline {
+    display: inline-block;
+}
+
+//inline children
+.u-inline > * {
+    @extend %u-inline;
+}
+
+.u-inline--no-wrap {
+    white-space: nowrap;
+}
+
+//inline elements
+.u-inline-block {
+    display: inline-block;
+}
+
+// vertically stacked
+.u-stacked > * {
+    display: block;
+}
+
+// inline
+.u-inline--baseline > * {
+    @extend %u-inline;
+    vertical-align: baseline;
+}
+
+/* ==========================================================================
+
+   ### Table-like structures
+
+   ```
+   <div class="u-table">
+    <div class="u-table-cell">table cell</div>
+   </div>
+
+   <div class="u-table--for-centering">
+    <div class="u-table-cell">centered table cell</div>
+   </div>
+
+   ```
+   ========================================================================== */
+
+.u-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.u-table-cell {
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.u-table--for-centering {
+    display: table;
+    margin: 0 auto;
+}
+
+
+
+/* ==========================================================================
+
+   ### Visibility Helpers
+
+   ```
+   <p class="u-hidden--from-mobile">this is hidden from mobile screens</p>
+   <p class="u-hidden--from-s-tablet">this is hidden from small tablet screens</p>
+   <p class="u-hidden--from-l-tablet">this is hidden from large tablets screens</p>
+   <p class="u-hidden--from-desktop">this is hidden from desktop  screens</p>
+   <p class="u-hidden--from-large">this is hidden from large screens</p>
+
+   <p class="u-hidden--until-mobile">this is hidden until mobile screens</p>
+   <p class="u-hidden--until-s-tablet">this is hidden until small tablet screens</p>
+   <p class="u-hidden--until-l-tablet">this is hidden until large tablets screens</p>
+   <p class="u-hidden--until-desktop">this is hidden until desktop  screens</p>
+   <p class="u-hidden--until-large">this is hidden until large screens</p>
+   ```
+   ========================================================================== */
+
+.u-hidden, //also as global state
+.is-hidden,
+.js .is-jshidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.u-visuallyhidden {
+    @include visually-hidden;
+
+    .focusable {
+
+        &:active,
+        &:focus {
+            position: static;
+            overflow: visible;
+            clip: auto;
+            width: auto;
+            height: auto;
+            margin: 0;
+        }
+
+    }
+
+}
+
+//also as global state
+.u-invisible,
+.is-invisible {
+    visibility: hidden;
+}
+
+@each $mq-key, $mq-value in $mq-breakpoints {
+
+    @include mq($mq-key) {
+        .u-hidden--from-#{$mq-key} {
+            display: none !important;
+            visibility: hidden;
+        }
+    }
+
+    @include mq($until: $mq-key) {
+        .u-hidden--until-#{$mq-key} {
+            display: none !important;
+            visibility: hidden;
+        }
+    }
+}
+
+.u-75 {
+    width: 75%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            width: 75%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            width: 75%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            width: 75%;
+        }
+    }
+}
+
+.u-50{
+    width: 50%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            width: 50%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            width: 50%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            width: 50%;
+        }
+    }
+}
+
+.u-40 {
+    width: 40%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            width: 40%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            width: 40%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            width: 40%;
+        }
+    }
+}
+
+.u-30 {
+    width: 30%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            width: 30%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            width: 30%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            width: 30%;
+        }
+    }
+}
+
+.u-25 {
+    width: 25%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            width: 25%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            width: 25%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            width: 25%;
+        }
+    }
+}
+
+.u-off-10 {
+    margin-left: 10%;
+
+    &\@mobile {
+        @include mq($until: mobile) {
+            margin-left: 10%;
+        }
+    }
+
+    &\@tablet {
+        @include mq(s-tablet) {
+            margin-left: 10%;
+        }
+    }
+
+    &\@l-tablet {
+        @include mq(l-tablet) {
+            margin-left: 10%;
+        }
+    }
+}
+
+.u-pl {
+    padding-left: $spacer;
+
+    &--2 {
+        padding-left: $spacer * 2;
+    }
+
+    &--0\@mobile {
+        @include mq($until: mobile) {
+            padding-left: 0;
+        }
+    }
+
+    &--2\@mobile {
+        @include mq($until: mobile) {
+            padding-left: $spacer * 2;
+        }
+    }
+}
+
+.u-pr {
+    padding-right: $spacer;
+
+    &--2 {
+        padding-right: $spacer * 2;
+    }
+
+    &--0\@mobile {
+        @include mq($until: mobile) {
+            padding-right: 0;
+        }
+    }
+
+    &--2\@mobile {
+        @include mq($until: mobile) {
+            padding-right: $spacer * 2;
+        }
+    }
+}
+
+.u-p {
+    &--2\@mobile {
+        @include mq($until: mobile) {
+            padding: 0 $spacer * 2;
+        }
+    }
+}
+
+$margin-top-class: u-mt !default;
+@for $i from 1 through 10 {
+    .#{$margin-top-class}#{$i} {
+
+        margin-top: #{$i}rem;
+
+        &\@tablet {
+            @include mq(s-tablet) {
+                margin-top: #{$i}rem;
+            }
+        }
+
+        &\@desktop {
+            @include mq(desktop) {
+                margin-top: #{$i}rem;
+            }
+        }
+    }
+}
+
+.u-cursor-def {
+    cursor: default;
+}
+
+.u-link--primary {
+    font-weight: 700;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    &,
+    &:visited,
+    &:active {
+        cursor: pointer;
+        color: $color-primary;
+    }
+
+    &:hover {
+        color: $color-text;
+    }
+}

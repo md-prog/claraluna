@@ -1,0 +1,25 @@
+.c-social {
+    list-style: none;
+    padding-left: 0;
+
+    margin-bottom: 6rem;
+
+    li {
+        display: inline-block;
+        margin: 0 1rem;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            font-size: 1.3rem;
+            color: darken($color-primary, 5%);
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+}

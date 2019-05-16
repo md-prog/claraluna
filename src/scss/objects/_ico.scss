@@ -1,0 +1,106 @@
+// icons
+$font-icon: 'claraluna';
+
+%icon-style {
+    font-family: $font-icon;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+
+    display: inline-block;
+
+    margin-right: 0;
+    margin-left: 0;
+
+    text-transform: none;
+
+    speak: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+    font-family: $font-icon;
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('/assets/fonts/claraluna/fonts/#{$font-icon}.eot?-8nuhea');
+    src: url('/assets/fonts/claraluna/fonts/#{$font-icon}.eot?#iefix-8nuhea') format('embedded-opentype'),
+    url('/assets/fonts/claraluna/fonts/#{$font-icon}.ttf?-8nuhea') format('truetype'),
+    url('/assets/fonts/claraluna/fonts/#{$font-icon}.woff?-8nuhea') format('woff'),
+    url('/assets/fonts/claraluna/fonts/#{$font-icon}.svg?-8nuhea#icomoon') format('svg');
+}
+
+$icons: (
+    close: '\e900',
+    share: '\e901',
+    heart-fill: '\e902',
+    heart: '\e903',
+    grid: '\e904',
+    arrow-up: '\e905',
+    arrow-down: '\e906',
+    arrow-left: '\e907',
+    arrow-right: '\e908',
+    pin: '\e909',
+    eye: '\e90a',
+    youtube: '\e90b',
+    twitter: '\e90c',
+    instagram: '\e90d',
+    facebook: '\e90e',
+    google-plus: '\e915',
+    pinterest: '\e914',
+    book-apt: '\e90f',
+    burger: '\e910',
+    collection-page: '\e911',
+    collection-page2: '\e912',
+    dots: '\e913',
+    reserved-area: '\e916',
+    rotate: '\e917',
+    lens: '\e918',
+    send: '\e91a',
+    calendar: '\e919'
+);
+
+// print icons
+@each $iconname, $iconcontent in $icons {
+    .o-ico--#{$iconname}::before,
+    [data-ico~='#{$iconname}']::after {
+        content: $iconcontent;
+    }
+}
+
+.o-ico,
+[data-ico]::after {
+    @extend %icon-style;
+}
+
+// Adjustments
+.o-ico {
+    font-size: rem(12px);
+}
+
+.o-ico--book-apt {
+    font-size: rem(20px);
+}
+
+.o-ico--collection-page {
+    font-size: rem(14px);
+}
+
+.o-ico--collection-page2 {
+    font-size: rem(16px);
+}
+
+.o-ico--dots {
+    font-size: rem(16px);
+}
+
+.o-ico--reserved-area {
+    font-size: rem(16px);
+}
+
+.o-ico--calendar {
+    font-size: rem(18px);
+}

@@ -1,0 +1,100 @@
+$check-height: 45px;
+
+.c-check {
+    position: relative;
+    height: $check-height;
+    margin-bottom: 2rem;
+}
+
+.c-check__input,
+.c-check__label {
+    @include absolute;
+    height: $check-height;
+}
+
+.c-check__input {
+    opacity: 0;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.c-check__label {
+    @include font-geometric;
+    line-height: 1;
+    padding-top: 6px;
+    padding-left: $check-height;
+
+    pointer-events: none;
+
+    a {
+        pointer-events: auto;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+
+        border-radius: 50%;
+
+        width: $check-height / 2;
+        height: $check-height / 2;
+
+        transition: all 0.2s ease;
+    }
+
+    &::before {
+        background-color: transparent;
+        border: 1px solid rgba($color-text, 0.3);
+    }
+
+    &::after {
+        background-color: $color-text;
+        transform: scale(0.2, 0.2);
+    }
+
+    a {
+        color: $color-primary;
+        font-weight: 800;
+    }
+
+    // THEME: t-primary
+    .t-primary > &::before {
+        background-color: transparent;
+        border: 1px solid rgba($color-white, 0.3);
+    }
+
+    .t-primary > &::after {
+        background-color: $color-white;
+    }
+}
+
+.c-check__input:checked + .c-check__label {
+    &::before {
+        border: 1px solid rgba($color-text, 1);
+    }
+
+    &::after {
+        transform: scale(0.7, 0.7);
+    }
+}
+
+// t-primary
+.t-primary > .c-check__input:checked + .c-check__label {
+    &::before {
+        border: 1px solid rgba($color-white, 1);
+    }
+}
+
+.t-primary a {
+    color: lighten($color-primary, 10%);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-white;
+    }
+}

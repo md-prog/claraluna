@@ -1,0 +1,143 @@
+
+.c-trigger {
+    display: block;
+    z-index: z-index(above) + 1;
+}
+
+.c-trigger--menu,
+.c-trigger--reserved-area,
+.c-trigger--collections,
+.c-trigger--privacy {
+    position: fixed;
+    z-index: z-index(frame) + 1;
+    top: 0;
+
+    font-family: $font-family-serif;
+    font-size: $menu-trigger-font-size;
+
+    @include mq-prop(left, $frame-weight);
+    @include mq-prop(height, $frame-top-weight);
+}
+
+.c-trigger--reserved-area,
+.c-trigger--collections,
+.c-trigger--privacy {
+    @include mq-prop(right, $frame-weight);
+    left: auto;
+}
+
+.c-trigger--menu {
+    width: 50px;
+}
+
+.c-trigger--collections,
+.c-trigger--privacy {
+    top: auto;
+    bottom: 0;
+    @include mq-prop(height, $frame-weight);
+}
+
+.c-trigger--collections {
+    display: none;
+
+    @include mq(s-tablet) {
+        display: flex;
+    }
+}
+
+.c-trigger--privacy {
+    @include mq-prop((height, line-height), $frame-weight);
+    left: 0;
+    right: 0;
+
+    text-align: center;
+
+    @include mq(s-tablet) {
+        right: auto;
+        text-align: center;
+        left: map_get($frame-weight, s-tablet);
+    }
+}
+
+.c-trigger--frameButton {
+    position: fixed;
+    z-index: z-index(frame) + 1;
+    top: auto;
+    bottom: 10px;
+    left: map_get($frame-weight, null) * 2;
+    right: map_get($frame-weight, null) * 2;
+    margin: auto;
+
+    @include mq(s-tablet) {
+        left: 0;
+        right: 0;
+        text-align: center;
+        width: 33%;
+    }
+
+    span {
+        font-weight: 700;
+        position: relative;
+        display: block;
+        transform: translateY(0) rotateX(0deg);
+        transition: all 0.3s ease-in-out 0.1s;
+    }
+}
+
+.c-trigger--frameButton {
+    display: none;
+
+    @include mq(s-tablet) {
+        display: inline-block;
+    }
+}
+
+.c-trigger--close-col {
+    @include absolute;
+    top: auto;
+    bottom: $spacer * 2;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include mq(s-tablet) {
+        top: 10px;
+        bottom: auto;
+    }
+
+    @include mq(desktop) {
+        top: -20px;
+        bottom: auto;
+        opacity: 0;
+    }
+}
+
+.c-trigger--frameButton,
+.c-trigger--open-col,
+.c-trigger--close-col {
+    @include mq(s-tablet) {
+        .c-btn {
+            width: 250px;
+        }
+    }
+}
+
+.c-trigger--frameButton {
+    perspective: 700px;
+}
+
+.c-trigger--newsletter {
+    margin-bottom: $spacer * 4;
+
+    @include mq(s-tablet) {
+        @include fixed;
+        top: auto;
+        left: 0;
+        right: 0;
+        bottom: 90px;
+        margin: 0 auto;
+
+        .c-btn {
+            width: 250px;
+        }
+    }
+}

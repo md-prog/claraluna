@@ -1,0 +1,42 @@
+.o-frame {
+    @include fixed;
+    z-index: z-index(frame);
+
+    margin: 0;
+    background-color: $frame-bg;
+
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out;
+
+    .is-frame-visible & {
+        transform: translateX(0%) translateY(0%);
+    }
+}
+
+.o-frame--top {
+    width: 100%;
+    transform: translateX(0%) translateY(-100%);
+    @include mq-prop(height, $frame-top-weight);
+}
+
+.o-frame--right {
+    @include mq-prop(width, $frame-weight);
+    left: auto;
+    right: 0;
+    height: 100%;
+    transform: translateX(100%) translateY(0%);
+}
+
+.o-frame--bottom {
+    @include mq-prop(height, $frame-weight);
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    transform: translateX(0%) translateY(100%);
+}
+
+.o-frame--left {
+    @include mq-prop(width, $frame-weight);
+    height: 100%;
+    transform: translateX(-100%) translateY(0%);
+}

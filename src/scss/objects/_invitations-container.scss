@@ -1,0 +1,17 @@
+.o-invitations-container__head {
+    position: relative;
+    display: inline-block;
+    height: calc(100% - #{$spacer} * 4);
+    float: left;
+}
+
+.o-invitations-container__inner {
+    @include absolute;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

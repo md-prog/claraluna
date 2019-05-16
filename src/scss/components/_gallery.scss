@@ -1,0 +1,114 @@
+.c-gallery {
+    @include absolute;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    @media screen and (min-aspect-ratio: 4/3) {
+        margin: 10% auto;
+        right: 15%;
+    }
+
+    @include mq(l-tablet) {
+        bottom: 0;
+        left: 10%;
+        right: 20%;
+        margin: 10% auto;
+    }
+
+    @include mq(desktop) {
+        margin: 10% auto;
+    }
+}
+
+.c-gallery__slides,
+.c-gallery__item,
+.c-gallery__image {
+    @include absolute;
+    z-index: z-index(above) + 1;
+    width: 100%;
+    height: 100%;
+}
+
+.c-gallery__slides,
+.c-gallery__item {
+    overflow: hidden;
+}
+
+.c-gallery__image {
+    background-size: cover;
+    background-position: center center;
+    cursor: url(/assets/images/cursor-zoom-open.cur), auto;
+    cursor: url(/assets/images/cursor-zoom-open.png), auto;
+}
+
+.c-gallery__indicator {
+    position: relative;
+    left: $spacer;
+    z-index: z-index(modal);
+
+    overflow: hidden;
+    text-indent: 99999px;
+    width: 40px;
+    height: 20px;
+    border: 0;
+    background-color: transparent;
+
+    cursor: pointer;
+
+    @include mq(s-tablet) {
+        z-index: z-index(above);
+        left: -40px;
+    }
+
+    &::after {
+        @include absolute;
+        top: 50%;
+        width: 100%;
+        height: 3px;
+        background-color: lighten($color-black, 80%);
+        transform: scale(0.5, 1);
+        transform-origin: 0% 50%;
+        transition: transform 0.7s ease-in-out;
+
+        @include mq(s-tablet) {
+            height: 2px;
+            background-color: lighten($color-black, 70%);
+        }
+
+    }
+
+    .no-touchevents &:not(.is-active):hover {
+        &::after {
+            transition: transform 0.3s ease-in-out;
+            transform: scale(0.7, 1);
+        }
+    }
+}
+
+.c-gallery__indicator.is-active {
+    &::after {
+        transform: scale(1, 1);
+        background-color: lighten($color-black, 70%);
+
+        @include mq(s-tablet) {
+            background-color: lighten($color-black, 60%);
+        }
+    }
+}
+
+.c-gallery__reveal {
+    @include absolute;
+    z-index: z-index(above) + 3;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: 50% 0%;
+    transform: scale(1, 0);
+
+    background-color: $color-primary;
+}

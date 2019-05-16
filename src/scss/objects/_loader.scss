@@ -1,0 +1,64 @@
+.o-loader {
+
+    // display: none;
+
+    @include fixed;
+    z-index: z-index(frame);
+    width: 100vw;
+    height: 100vh;
+
+    svg {
+        #base {
+            fill: rgba($color-white, 1);
+        }
+
+        #alpha {
+            fill: $color-white;
+        }
+
+        #rect-bg {
+            @include absolute;
+            fill: darken($color-white, 10%);
+        }
+
+    }
+
+    #rect-overlay {
+        @include fixed;
+        will-change: transform;
+        z-index: z-index(frame) - 2;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        // background-color: darken($color-white, 5%);
+        background-color: $color-primary;
+
+        transform-origin: 100% 50%;
+        transform: translate3d(-50%, -50%, 0) scale(0, 1);
+    }
+}
+
+.o-loader__group-logo {
+    width: 100vw;
+    height: 100vh;
+
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.o-loader__loading {
+    @include font-geometric;
+    @include absolute;
+    top: 60%;
+    right: 0;
+    margin: auto;
+    text-align: center;
+    color: darken($color-gray, 25%);
+    letter-spacing: 4px;
+    font-size: rem(8px);
+
+    opacity: 0;
+    visibility: hidden;
+}

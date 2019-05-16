@@ -1,0 +1,34 @@
+.c-counter {
+    @include absolute;
+    top: auto;
+    left: auto;
+    right: calc(#{map_get($frame-weight, null)} + #{$spacer});
+    bottom: map_get($frame-top-weight, null) * 2;
+
+    @include mq(s-tablet) {
+        bottom: map_get($frame-top-weight, s-tablet) * 2;
+        right: calc(#{map_get($frame-weight, s-tablet)} + #{$spacer * 2});
+    }
+
+    @include mq(desktop) {
+        right: calc(#{map_get($frame-weight, s-tablet)} + #{$spacer * 4});
+    }
+}
+
+.c-counter__current,
+.c-counter__amount {
+    display: block;
+    text-align: center;
+    font-weight: 200;
+    font-size: rem(30px);
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.c-counter__current {
+}
+
+.c-counter__amount {
+
+}

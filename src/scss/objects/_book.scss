@@ -1,0 +1,148 @@
+.o-book {
+    position: fixed;
+    z-index: z-index(overlay);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    color: $color-white;
+    transition: background-color 0.3s ease 1s;
+
+    @include mq(s-tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    &.is-book-open,
+    &.is-book-closing {
+        transition: background-color 0.3s ease 0s;
+        opacity: 1;
+        visibility: visible;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.o-book__transition {
+    @include fixed;
+    z-index: z-index(above) + 2;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    .is-book-open &,
+    .is-book-closing & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.o-book__background {
+    @include absolute;
+    top: 50%;
+    left: 50%;
+    width: 2500%;
+    height: 100%;
+    transform: translate3d(-2%, -50%, 0);
+
+    // background: url(/assets/images/book-sprite--white.png) no-repeat 0 0;
+    background: url(/assets/images/book-sprite.png) no-repeat 0 0;
+    background-size: 100% 100%;
+
+    .is-book-open & {
+        animation: menu-sprite 0.8s steps(24);
+        animation-fill-mode: forwards;
+    }
+
+    .is-book-closing & {
+        //animation: menu-sprite-reverse 0.8s steps(24);
+        //animation-fill-mode: forwards;
+        animation: menu-sprite 0.8s steps(24);
+        animation-fill-mode: forwards;
+
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out 0.2s;
+    }
+}
+
+.o-book__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    @include mq(s-tablet) {
+        height: auto;
+        flex-direction: row;
+        width: 80%;
+    }
+}
+
+.o-book__side {
+    position: relative;
+    z-index: z-index(modal);
+    text-align: left;
+
+    transform: translateY(5%);
+    opacity: 0;
+
+    &:nth-child(1) {
+        @include mq-prop((margin-left, margin-right), $frame-weight);
+        margin-bottom: map_get($frame-weight, null) * 4;
+
+        @include mq(s-tablet) {
+            flex-basis: 60%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-left: $spacer;
+        }
+    }
+
+    &:nth-child(2) {
+        @include mq-prop(margin-left, $frame-weight);
+        @include mq-prop(margin-right, $frame-weight);
+        margin-top: 30%;
+        margin-bottom: map_get($frame-weight, null);
+        order: -1;
+
+        @include mq(s-tablet) {
+            order: 1;
+            flex-basis: 40%;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-right: $spacer;
+        }
+    }
+
+    .is-book-open & {
+        opacity: 1;
+        transform: translateY(0);
+
+        &:nth-child(1) {
+            transition: all 1s ease-out 0.2s;
+        }
+
+        &:nth-child(2) {
+            transition: all 1s ease-out 0.6s;
+        }
+    }
+
+    .is-book-closing & {
+        transform: translateY(5%);
+        opacity: 0;
+        transition: all 0.7s ease-in;
+    }
+}
+
+.o-book__title {
+    color: $color-white;
+    font-weight: 800;
+    margin-bottom: 3rem;
+}

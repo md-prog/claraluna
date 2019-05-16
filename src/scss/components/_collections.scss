@@ -1,0 +1,301 @@
+.c-collections {
+    min-height: 100%;
+    transform-style: flat;
+}
+
+.c-collections__container {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    // overflow-x: hidden;
+}
+
+.c-collections__item {
+    @include absolute;
+    z-index: z-index(modal);
+    backface-visibility: hidden;
+    transform-style: flat;
+    width: 100%;
+    height: 100vh;
+
+    @include mq($until: desktop) {
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.c-collections__head {
+    @include mq-prop((padding-left, padding-right, padding-bottom, padding-top), $frame-weight);
+    @include boost-performance();
+    will-change: transform;
+    z-index: z-index(modal);
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+    overflow: hidden;
+
+    color: $color-white;
+    background-color: $color-white;
+
+    @include mq(s-tablet) {
+        @include absolute;
+        text-align: left;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+.c-collections__name {
+    @include absolute;
+    top: map_get($frame-top-weight, null);
+    height: 20%;
+
+    font-family: $font-family-serif;
+    margin: 0 auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(s-tablet) {
+        position: relative;
+        height: auto;
+        top: 0;
+        flex: 0 1 auto;
+        align-self: baseline;
+        margin: 0;
+        max-width: 75%;
+        min-height: 0;
+
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        position: relative;
+        margin: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        color: $color-primary;
+        font-size: rem(30px);
+        line-height: 1;
+
+        overflow: hidden;
+
+        max-width: 250px;
+
+        > div {
+            border-bottom: 2px solid $color-primary;
+            @include mq(s-tablet) {
+                border-bottom: 0;
+            }
+        }
+
+        @include mq(s-tablet) {
+            display: block;
+            color: $color-white;
+            font-size: rem(50px);
+            margin-left: map_get($frame-weight, s-tablet) * 2;
+            max-width: none;
+        }
+
+        @include mq(desktop) {
+            font-size: rem(60px);
+        }
+
+    }
+
+    u {
+        @include absolute;
+        right: 0;
+        height: 3px;
+        top: calc(100% - 3px);
+        background-color: $color-primary;
+
+        transform-origin: 0% 50%;
+        transform: scale(1, 1);
+
+        display: none;
+
+        @include mq(s-tablet) {
+            background-color: $color-white;
+            display: block;
+        }
+
+        @include mq(desktop) {
+            animation: underlineHover 1.5s ease-out forwards;
+        }
+    }
+}
+
+.c-collections__cover {
+    @include boost-performance();
+    @include absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    will-change: transform;
+    // animation: zoomOut 10s ease-out forwards;
+
+    @include mq(desktop) {
+        background-position: 50% 30%;
+        // animation: zoomOut 10s ease-out forwards;
+    }
+
+    &::after {
+        @include absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($color-black, 0.12);
+    }
+
+}
+
+.c-collections__mob-cover {
+    @include absolute;
+    @include boost-performance();
+    will-change: transform;
+
+    right: 0;
+    margin: auto;
+    top: 50%;
+    width: 70%;
+    padding-bottom: 70%;
+    height: 0;
+
+    transform: translateY(-50%);
+
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.c-collections__navi {
+    @include boost-performance();
+
+    position: fixed;
+    z-index: z-index(modal) + 2;
+    top: calc(50% - #{map_get($circle-base, null) / 2});
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: calc(100% - #{map_get($frame-weight, s-tablet) + $spacer});
+    color: $color-white;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    @include mq(s-tablet) {
+        display: inline-block;
+        top: 50%;
+        left: auto;
+        width: auto;
+        right: map_get($frame-weight, s-tablet) * 2;
+        transform: translateY(-50%);
+    }
+
+    button {
+        pointer-events: auto;
+    }
+}
+
+.c-circle--coll-navi-prev{
+    order: -1;
+}
+
+.c-collections__progress,
+.c-collections__indicator {
+    @include boost-performance();
+
+    @include absolute;
+    @include mq_prop(top, $frame-top-weight);
+    @include mq_prop(left, $frame-weight);
+    z-index: z-index(modal) + 1;
+
+    background-color: rgba($color-primary, 0.0);
+    width: calc(100% - #{map_get($frame-weight, s-tablet) * 2});
+    height: 4px;
+    transform-origin: 0% 50%;
+
+    display: none;
+
+    @include mq(s-tablet) {
+        display: block;
+    }
+}
+
+.c-collections__indicator {
+    top: 0;
+    background-color: $color-primary;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    &.t-bomboniere {
+        background-color: darken($color-white, 10%);
+    }
+}
+
+.c-collections__triggers\@mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+
+    flex: 1 0 auto;
+}
+
+.c-collections__action-cell {
+    flex-basis: 33.3333%;
+}
+
+.c-collections__body {
+    @include mq-prop((padding-left, padding-right, padding-bottom), $frame-weight);
+    position: relative;
+    z-index: z-index(modal) - 2;
+    margin: 0;
+
+    @include mq(s-tablet) {
+        margin-top: 200px;
+        padding-bottom: 100px;
+    }
+}
+
+.c-collections__triggers {
+    @include boost-performance();
+
+    @include absolute;
+    top: auto;
+    left: 50%;
+    bottom: map_get($frame-weight, null) * 2;
+    transform: translateX(-50%);
+
+    @include mq(s-tablet) {
+        bottom: map_get($frame-weight, s-tablet) * 2 + $spacer;
+    }
+}
+
+.js-collection__letters {
+    @include boost-performance();
+    will-change: transform;
+}
+
+.js-collections-header {
+    > div {
+        display: inline-block !important;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,44 @@
+.o-newsletter {
+    @include mq-prop((padding-left, padding-right), $frame-weight);
+    padding-top: $spacer * 8;
+
+    @include mq(s-tablet) {
+        @include absolute;
+        padding-top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+.o-newsletter__background {
+    @include fixed;
+    width: 100%;
+    height: 100%;
+    background-position: 50% 50%;
+    background-size: cover;
+    opacity: 0.05;
+}
+
+.o-newsletter__inner {
+    text-align: center;
+    @include mq-prop((padding-left, padding-right), $frame-weight);
+
+    @include mq(s-tablet) {
+        flex-basis: 50%;
+    }
+
+    @include mq(desktop) {
+        flex-basis: 30%;
+    }
+
+    .o-form__inner {
+        @include mq(s-tablet) {
+            margin-top: 3rem;
+            width: 150%;
+            margin-left: -25%;
+        }
+    }
+}

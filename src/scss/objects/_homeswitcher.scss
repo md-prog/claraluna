@@ -1,0 +1,111 @@
+.o-homeswitcher {
+    @include absolute;
+
+    z-index: z-index(base);
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &::after {
+        @include absolute;
+        z-index: z-index(base) + 1;
+        width: 100%;
+        height: 100%;
+        background: rgba($color-gray, 0.9);
+
+        transition: background 1.5s ease;
+    }
+
+    .image_1,
+    .image_2 {
+        transform-origin: 50% 50%;
+        transition: opacity 0.5s ease, transform 15s $power3-ease-out;
+    }
+
+    #space-1 .image_2 {
+        opacity: 0;
+    }
+
+    &.has-second-image #space-1 .image_2,
+    &.has-second-image .image_2 {
+        opacity: 1;
+        transform: scale(1.1, 1.1);
+    }
+
+    &.has-first-image #space-2 .image_2,
+    &.has-first-image .image_2 {
+        opacity: 0;
+    }
+
+    &.has-first-image #space-2 .image_1,
+    &.has-first-image .image_1 {
+        transform: scale(1.1, 1.1);
+    }
+
+    .o-homeswitcher__background--one,
+    .o-homeswitcher__background--two{
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 15s $power3-ease-out;
+    }
+
+    &.has-first-image .o-homeswitcher__background--one {
+        opacity: 1;
+        transform: scale(1.1, 1.1);
+    }
+
+    &.has-second-image .o-homeswitcher__background--two {
+        opacity: 1;
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.o-homeswitcher--unselected {
+    &::after {
+        background: rgba($color-gray, 1);
+    }
+}
+
+.o-homeswitcher--selected {
+    &::after {
+        background: rgba($color-gray, 0.8);
+    }
+}
+
+.o-homeswitcher__svg {
+    position: relative;
+    z-index: z-index(base) + 2;
+    width: 100%;
+    height: 100%;
+}
+
+.o-homeswitcher__link {
+    font-family: $font-family-serif;
+    font-weight: 100;
+    font-size: rem(35px);
+    text-decoration: underline;
+    letter-spacing: 0;
+    cursor: pointer;
+
+    transition: fill 0.5s ease;
+
+    @include mq(s-tablet) {
+        font-size: rem(55px);
+    }
+
+    .u-lang-de & {
+        font-size: rem(28px);
+
+        @include mq(s-tablet) {
+            font-size: rem(55px);
+        }
+    }
+}
+
+.o-homeswitcher__background {
+    @include absolute;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 100%;
+    min-height: 100%;
+}

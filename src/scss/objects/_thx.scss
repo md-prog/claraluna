@@ -1,0 +1,12 @@
+.o-thx {
+    @include fixed;
+    z-index: z-index(modal);
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+}

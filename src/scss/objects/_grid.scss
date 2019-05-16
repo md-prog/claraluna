@@ -1,0 +1,57 @@
+.o-container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.o-grid {
+    @extend %clearfix;
+}
+
+.o-grid__item {
+    float: left;
+    width: 100%;
+}
+
+.o-col {
+    float: left;
+    position: relative;
+    padding: $spacer * 2;
+    width: 100%;
+}
+
+.o-cell {
+    margin-bottom: $spacer * 4;
+    padding: 0;
+    position: relative;
+
+    &::after {
+        pointer-events: none;
+        position: relative;
+        top: 0;
+        content: '';
+        width: 100%;
+        height: 0;
+        padding-bottom: 66%;
+        display: none;
+    }
+
+    @include mq(s-tablet) {
+        &::after {
+            display: block;
+        }
+    }
+}
+
+.o-cell__inner {
+    @include mq(s-tablet) {
+        @include absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.o-cell--tall {
+    &::after {
+        padding-bottom: calc(132% + #{$spacer * 4});
+    }
+}

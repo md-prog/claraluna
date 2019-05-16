@@ -1,0 +1,33 @@
+.o-people {
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
+.o-people__draggable {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 70%;
+
+    white-space: nowrap;
+
+    width: 100%;
+}
+
+.o-people__item {
+    width: 85%;
+    height: 70%;
+    margin: 0;
+    display: inline-block;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        width: 40%;
+    }
+}

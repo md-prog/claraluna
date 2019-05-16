@@ -1,0 +1,24 @@
+.o-landscape-alert {
+    position: fixed;
+    z-index: z-index(loader);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    text-align: center;
+
+    background-color: $color-white;
+    display: none;
+
+    &.is-landscape {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .o-ico {
+        font-size: rem(40px);
+        color: $color-primary;
+    }
+}

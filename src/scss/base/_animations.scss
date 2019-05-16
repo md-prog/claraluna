@@ -1,0 +1,35 @@
+@keyframes menu-sprite {
+    0% {
+        transform: translateX(-2%) translateY(-50%);
+    }
+
+    100% {
+        transform: translateX(-98%) translateY(-50%);
+    }
+}
+
+//@keyframes menu-sprite-reverse {
+//    0% {
+//        transform: translate3d(-98%, -50%, 0);
+//    }
+//
+//    100% {
+//        transform: translate3d(-2%, -50%, 0);
+//    }
+//}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1, 1);
+    }
+
+    100% {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+@keyframes zoomIn {
+    100% {
+        transform: scale(1, 1);
+    }
+}

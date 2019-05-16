@@ -1,0 +1,62 @@
+.c-box {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    @include mq(s-tablet) {
+        @include absolute;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.c-box__inner {
+    position: relative;
+    z-index: z-index(above) + 1;
+    padding: 10%;
+
+    @include mq(s-tablet) {
+        // padding: 7rem 20%;
+    }
+
+    h3,
+    h4 {
+        margin-top: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    p {
+        margin: 0;
+        line-height: 2;
+
+        @include mq(desktop) {
+            line-height: 2.5;
+        }
+    }
+}
+
+.c-box__cover {
+    @include absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.c-box__cover--gray {
+    background-color: $color-gray;
+}
+
+.c-box__reveal {
+    @include absolute;
+    z-index: z-index(above) + 2;
+    width: 100%;
+    height: 100%;
+    background-color: $color-primary;
+    visibility: visible;
+
+    transform: scale(1, 0);
+    transform-origin: 50% 0%;
+}

@@ -1,0 +1,15 @@
+.o-attitude__container {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    margin-top: map_get($frame-top-weight, null);
+
+    @include mq(s-tablet) {
+        margin-top: map_get($frame-top-weight, s-tablet);
+    }
+
+    @include mq(desktop) {
+        width: 75%;
+        margin-top: 10%;
+    }
+}

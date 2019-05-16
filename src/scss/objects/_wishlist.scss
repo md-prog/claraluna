@@ -1,0 +1,194 @@
+.o-wishlist {
+    padding-top: map_get($frame-top-weight, null) * 3;
+
+    @include mq(s-tablet) {
+        padding-top: 0;
+    }
+
+    @include mq(l-tablet) {
+        position: fixed;
+
+        width: 100%;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.o-wishlist__container {
+    @include mq-prop((padding), $frame-weight);
+    flex: 0 1 50%;
+    height: auto;
+
+    @include mq(s-tablet) {
+        flex: 1 0 40vh;
+        position: relative;
+        z-index: z-index(above);
+        width: auto;
+        background-color: transparent;
+        transform: translate3d(0, 0, 0);
+    }
+
+    @include mq(l-tablet) {
+        height: 100vh;
+    }
+
+}
+
+.o-wishlist__container--left {
+    // @extend .u-2-columns--left;
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+
+    transform: translate3d(0, 100%, 0);
+    transition: transform 1s cubic-bezier(.19,.51,.37,.97);
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        transform: translate3d(0, 0, 0);
+        padding: 0;
+
+        height: auto;
+        display: flex;
+        margin: auto;
+    }
+
+    @include mq(l-tablet) {
+        margin: map_get($frame-weight, s-tablet);
+        margin-right: 0;
+        height: calc(100vh - #{map_get($frame-weight, s-tablet) * 2});
+        padding: 0;
+    }
+}
+
+.o-wishlist__container--right {
+
+    @include mq(s-tablet) {
+        position: relative;
+        display: block;
+        background-color: transparent;
+        transform: translate3d(0, 0, 0);
+        padding: 0;
+
+        width: 80%;
+        height: auto;
+        margin: auto;
+    }
+
+    @include mq(l-tablet) {
+        margin: map_get($frame-weight, s-tablet) 0;
+        padding: 0;
+        padding-right: map_get($frame-weight, s-tablet);
+
+        height: calc(100vh - #{map_get($frame-weight, s-tablet) * 2});
+        overflow-y: auto;
+    }
+}
+
+.o-wishlist__title {
+    margin-top: $spacer * 4;
+    font-weight: 700;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        margin-top: $spacer * 8;
+    }
+}
+
+.o-wishlist__categories {
+
+    h2 {
+        position: relative;
+        display: inline-block;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    span {
+        display: inline-block;
+        font-family: $font-family-serif;
+        font-size: rem(18px);
+        color: $color-title-gray;
+        text-decoration: underline;
+        line-height: 1.2;
+
+        @include mq(s-tablet) {
+            font-size: rem(55px);
+            line-height: 1.5;
+        }
+
+        @include mq(l-tablet) {
+            font-size: rem(40px);
+        }
+
+        @include mq(desktop) {
+            font-size: rem(55px);
+        }
+    }
+
+    sup {
+        font-family: $font-family-sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+
+        @include mq(s-tablet) {
+            @include absolute;
+            top: $spacer * 3;
+            left: calc(100% + #{$spacer});
+        }
+    }
+
+}
+
+.o-wishlist__counter {
+    text-align: center;
+    margin: $spacer * 2 auto;
+    font-size: rem(28px);
+    font-weight: 200;
+
+    @include mq(s-tablet) {
+        margin: $spacer * 4 auto;
+    }
+
+    .o-ico {
+        font-size: rem(18px);
+        margin-right: 1rem;
+        color: $color-primary;
+    }
+}
+
+.o-wishlist__message {
+    display: flex;
+    height: auto;
+    width: 100%;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include mq(l-tablet) {
+        height: 100%;
+    }
+}
+
+.o-wishlist__message-inner {
+    width: 90%;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        width: 70%;
+    }
+
+    @include mq(desktop) {
+        width: 50%;
+    }
+}

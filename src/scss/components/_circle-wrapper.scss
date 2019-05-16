@@ -1,0 +1,49 @@
+.c-circle-wrapper {
+    position: relative;
+    @include mq-prop((width, height), $circle-base);
+}
+
+.c-circle-wrapper__label {
+
+}
+
+.c-circle-wrapper--view-all {
+    @include absolute;
+    left: auto;
+    top: calc(#{map_get($frame-top-weight, null)} + #{$spacer});
+    right: calc(#{map_get($frame-weight, null)} + #{$spacer});
+    z-index: z-index(modal) + 2;
+    background-color: transparent;
+    border-color: darken($color-white, 10%);
+    color: $color-white;
+
+    @include mq(s-tablet) {
+        top: calc(#{map_get($frame-top-weight, s-tablet)} + 6%);
+        right: calc(#{map_get($frame-weight, s-tablet)} + #{$spacer});
+        z-index: z-index(above) + 1;
+        color: darken($color-white, 50%);
+    }
+
+    @include mq(desktop) {
+        right: calc(#{map_get($frame-weight, s-tablet)} + #{$spacer * 4});
+    }
+
+    .no-touchevents &:hover {
+        border-color: darken($color-white, 20%);
+    }
+}
+
+.c-circle-wrapper__label {
+    @include absolute;
+    top: calc(100% + #{$spacer});
+    left: 50%;
+    width: 10px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.js-circle-wrapper__letters {
+    float: left;
+    width: 100%;
+    line-height: 1.5;
+}

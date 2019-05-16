@@ -1,0 +1,98 @@
+.c-sidebar {
+    @include absolute;
+    @include boost-performance;
+    //@include mq-prop(left, $frame-weight);
+    will-change: transform;
+    width: 100%;
+    z-index: z-index(modal);
+
+    overflow: hidden;
+
+    height: 100%;
+
+    background-color: lighten($color-primary, 5%);
+
+    transform: translateX(calc(-100% + #{map_get($frame-weight, s-tablet)}));
+    transition: background-color 0.7s $power3-ease-out, transform 0.7s $power3-ease-in-out, opacity 0.7s ease;
+
+    @include mq(s-tablet) {
+        width: calc(50% + #{map_get($frame-weight, s-tablet)});
+    }
+
+    @include mq(desktop) {
+        width: calc(33% + #{map_get($frame-weight, s-tablet)});
+    }
+
+    &:hover {
+        background-color: $color-primary;
+    }
+}
+
+.c-square--sidebar {
+    @include absolute;
+    width: map_get($frame-weight, s-tablet);
+    left: auto;
+    right: 0;
+    transform-origin: 50% 50%;
+    cursor: pointer;
+    height: 100%;
+}
+
+.c-sidebar__inner {
+    height: 100%;
+    overflow-y: auto;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    padding: 2rem 2rem;
+
+    @include mq(s-tablet) {
+        padding: 2rem 6rem;
+    }
+
+    @include mq(desktop) {
+        padding: 2rem 8rem;
+    }
+}
+
+.c-sidebar__store {
+    color: $color-white;
+    margin-top: 3rem;
+
+    strong {
+        font-family: $font-family-serif;
+        font-size: rem(16px);
+
+        @include mq(s-tablet) {
+            font-size: rem(20px);
+        }
+
+        .o-ico {
+            font-size: rem(22px);
+            margin-right: 1rem;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.c-sidebar.is-open {
+    transform: translateX(0);
+}
+
+.c-sidebar .c-square {
+    transition: all 0.5s $power3-ease-in;
+}
+
+.c-sidebar.is-open .c-square {
+    .o-ico {
+        transform: rotate(-180deg);
+    }
+}
+
+.c-sidebar.is-open .c-sidebar__inner {
+    visibility: visible;
+    opacity: 1;
+}

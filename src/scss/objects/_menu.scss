@@ -1,0 +1,282 @@
+.o-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+
+    opacity: 0;
+    visibility: hidden;
+
+    background-color: rgba($color-menu, 0);
+    transition: background-color 0.3s ease 1s, z-index 0s 1.3s;
+
+    &.is-menu-open,
+    &.is-menu-closing {
+        transition: background-color 0.3s ease 0s;
+        background-color: rgba($color-menu, 0);
+        opacity: 1;
+        visibility: visible;
+        z-index: z-index(overlay) +5; // Attenzione al bottone book an appointment su mobile
+    }
+}
+
+.o-menu__container {
+    position: relative;
+    z-index: z-index(above) + 3;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: map_get($frame-top-weight, null) + $spacer;
+
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+
+    @include mq(s-tablet) {
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+    }
+}
+
+.o-menu__inner {
+    position: relative;
+    z-index: z-index(above) + 3;
+    flex: 1 0 33.3333%;
+    will-change: opacity;
+    transition: opacity 0.3s ease-in-out;
+
+    span {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    span.u-text--geometric:not(first-of-type) {
+        display: inline-block;
+        margin-top: $spacer * 2;
+    }
+
+    .is-menu-closing & {
+        opacity: 0;
+    }
+
+    .is-menu-open & {
+        span {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out 0.7s;
+        }
+    }
+}
+
+.o-menu__inner.o-menu__inner--bottom {
+    flex: 1 0 50%;
+}
+
+.o-menu__item {
+    font-family: $font-family-serif;
+    font-size: rem(24px);
+    line-height: 1;
+    letter-spacing: 1px;
+    color: darken($color-text, 15%);
+    margin-top: 0.8em;
+
+    @include mq(s-tablet) {
+        font-size: rem(25px);
+    }
+
+    @include mq(desktop) {
+        font-size: rem(30px);
+    }
+
+    a {
+        position: relative;
+        z-index: z-index(above);
+
+        &.is-active {
+            color: $color-primary;
+            transition: color 0.3s ease 1s;
+        }
+
+        &::after {
+            @include boost-performance();
+            @include absolute;
+            z-index: z-index(base) - 1;
+            top: 50%;
+            height: 2px;
+            width: 100%;
+            background-color: lighten($color-primary, 10%);
+            transform-origin: 50% 50%;
+            transform: scale(0, 1);
+            transition: transform 0.3s ease-in-out 0s;
+        }
+    }
+
+    .no-touchevents & > a:not(.is-active):hover {
+        &::after {
+            transform: scale(1.2, 1);
+        }
+    }
+}
+
+.o-menu__item--head {
+    @include font-geometric;
+    font-size: rem(9px);
+    font-weight: 700;
+    line-height: 2.5;
+    color: $color-primary;
+
+    a {
+        &::after {
+            background-color: lighten($color-text, 10%);
+            height: 1px;
+        }
+    }
+}
+
+.o-menu__top,
+.o-menu__bottom {
+    width: 100%;
+
+    @include mq(s-tablet) {
+        display: flex;
+        flex-direction: row;
+        width: calc(100% - #{map_get($frame-weight, s-tablet) * 2});
+    }
+}
+
+.o-menu__bottom {
+    display: block;
+    margin: map_get($frame-weight, null) 0 map_get($frame-weight, null) * 5;
+
+    @include mq(s-tablet) {
+        display: flex;
+        // margin: 0;
+        width: 66.6666%;
+    }
+}
+
+.o-menu__transition {
+    position: fixed;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: z-index(above) + 1;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    .is-menu-open &,
+    .is-menu-closing & {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.o-menu__background {
+    @include fixed;
+    @include boost-performance;
+    z-index: z-index(frame) - 1;
+
+    opacity: 0;
+    background: $color-menu;
+    transition: opacity 0.5s $power3-ease-in-out;
+
+    @include mq(s-tablet) {
+        top: 50%;
+        left: 50%;
+        width: 2500%;
+        height: 100%;
+        transform: translateX(-2%) translateY(-50%);
+        opacity: 1;
+        background: url(/assets/images/claraluna-menu.png) no-repeat 0 0;
+        background-size: 100% 100%;
+        transition: none;
+    }
+
+    .is-menu-open & {
+        opacity: 1;
+
+        @include mq(s-tablet) {
+            animation: menu-sprite 0.8s steps(24);
+            animation-fill-mode: forwards;
+        }
+    }
+
+    .is-menu-closing & {
+        opacity: 0;
+        transition: opacity 0.5s $power3-ease-in-out 0.2s;
+
+        @include mq(s-tablet) {
+            animation: menu-sprite 0.8s steps(24);
+            animation-fill-mode: forwards;
+        }
+    }
+}
+
+.o-menu__hd {
+    @include boost-performance();
+    @include absolute;
+    z-index: z-index(frame) - 1;
+    visibility: hidden;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url(/assets/images/menu-hd.png) no-repeat 0 0;
+    background-size: 100% 100%;
+    transition: opacity 0.4s linear, visibility 0s 1s;
+
+    will-change: opacity;
+
+    display: none;
+
+    @include mq(s-tablet) {
+        display: block;
+    }
+
+    .is-menu-open & {
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 1s linear;
+    }
+
+    .is-menu-closing & {
+        visibility: visible;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+}
+
+.o-menu__label {
+    @include absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.o-menu__label--close {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.o-menu__label--menu {
+    transition: opacity 1s ease;
+}
+
+.is-menu-open {
+    .o-menu__label--close {
+        opacity: 1;
+    }
+
+    .o-menu__label--menu {
+        opacity: 0;
+    }
+}

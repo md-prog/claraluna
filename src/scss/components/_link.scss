@@ -1,0 +1,61 @@
+.c-link {
+    .no-touchevents &:hover {
+        .c-link__value {
+            color: $color-primary;
+            &::after {
+                background-color: $color-primary;
+            }
+        }
+
+        .c-link__caption {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            transition: all 0.7s $power3-ease-out;
+        }
+    }
+}
+.c-link__value {
+    position: relative;
+    display: block;
+    line-height: 1;
+    font-family: $font-family-serif;
+    font-size: rem(30px);
+    text-decoration: none;
+    color: $color-default;
+    transition: color 0.5s $power3-ease-in-out;
+    cursor: pointer;
+
+    @include mq(desktop) {
+        font-size: rem(55px);
+    }
+
+    &::after {
+        @include absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 100%;
+        background-color: $color-default;
+        transition: background-color 0.5s $power3-ease-in-out;
+    }
+}
+
+.c-link__caption {
+    @include font-geometric;
+    font-weight: 700;
+    margin-top: $spacer * 2;
+    color: $color-primary;
+    cursor: pointer;
+    display: none;
+
+    @include mq(s-tablet) {
+        display: block;
+    }
+
+    .no-touchevents & {
+        opacity: 0;
+        transform: translate3d(20px, 0, 0);
+        transition: opacity 0.5s $power3-ease-out, transform 0s 0.5s;
+    }
+}

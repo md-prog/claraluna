@@ -1,0 +1,56 @@
+.c-share-buttons {
+    position: relative;
+
+    & > .c-share-buttons__button {
+        opacity: 1;
+        transition: all 0.7s $power3-ease-in-out;
+    }
+    & > .c-share-buttons__button.is-open {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+.c-share-buttons__inner {
+    @include absolute;
+    width: 200px;
+    height: 30px;
+    opacity: 0;
+
+    transition: all 0.7s $power3-ease-in-out;
+
+    .c-share-buttons__button {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+.c-share-buttons__inner.is-open {
+    opacity: 1;
+    transform: translateX(-120px);
+}
+
+.c-share-buttons__button {
+    background-color: transparent;
+    border: 0;
+    display: inline-block;
+
+    .o-ico {
+        font-size: rem(15px);
+        color: $color-primary;
+    }
+}
+
+.c-share-buttons__list {
+    display: inline;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: inline;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+}

@@ -1,0 +1,26 @@
+.o-stores {
+    @include absolute;
+    @include mq-prop(top, $frame-top-weight);
+    @include mq-prop(left, $frame-weight);
+    @include mq-prop(right, $frame-weight);
+    @include mq-prop(bottom, $frame-weight);
+}
+
+.c-marker-cluster {
+    > div {
+        color: $color-white !important;
+    }
+}
+
+.o-stores__lens {
+    @include fixed;
+    @include mq-prop((top, left), $frame-top-weight);
+    margin: 15px $spacer * 3;
+    z-index: z-index(modal);
+    font-size: rem(18px);
+
+
+    @include mq(s-tablet) {
+        margin: 15px $spacer * 4;
+    }
+}

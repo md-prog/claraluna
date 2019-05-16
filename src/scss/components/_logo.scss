@@ -1,0 +1,77 @@
+.c-logo {
+    position: relative;
+
+    svg {
+        background-color: transparent;
+        enable-background: new 0 0 679.4 74.6;
+    }
+
+    &.c-logo--sub {
+        &:after {
+            @include absolute;
+            @include font-geometric;
+            font-size: rem(7px);
+            content: 'italia';
+            top: auto;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.c-logo--main {
+    @include boost-performance();
+    position: fixed;
+    z-index: z-index(frame) + 1;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transition: transform 0.3s ease-in-out;
+    transform: translate3d(0, -100%, 0);
+
+    &,
+    svg {
+        @include mq-prop(height, $frame-top-weight);
+        width: 130px;
+        margin: auto;
+
+        @include mq(s-tablet) {
+            width: 160px;
+        }
+    }
+
+    path,
+    polygon {
+        fill: $menu-logo-bg;
+    }
+
+    &.is-visible {
+        transition: transform 1s $power3-ease-out 0.2s;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.c-logo--loader {
+    width: 50vw;
+}
+
+.c-logo--home {
+    @include absolute;
+    z-index: z-index(above) + 1;
+    top: 25%;
+    left: 15%;
+    width: 150px;
+    height: 35px;
+
+    @include mq(s-tablet) {
+        width: 200px;
+        height: 45px;
+    }
+
+    path,
+    polygon {
+        fill: $menu-logo-bg;
+    }
+}

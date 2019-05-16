@@ -1,0 +1,63 @@
+.o-atelier {
+    display: flex;
+    height: 100vh;
+
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow-x: hidden;
+}
+
+.o-atelier__draggable {
+    position: relative;
+    height: 70vh;
+    display: inline-block;
+    //flex-direction: row;
+    //flex-basis: 70%;
+
+    white-space: nowrap;
+
+    width: 100%;
+}
+
+.o-atelier__label {
+    @include font-geometric;
+    @include absolute;
+    right: 0;
+    left: 0;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.o-atelier__label.o-atelier__label--bottom {
+    top: auto;
+    bottom: 0;
+}
+
+.o-atelier__address {
+    @include absolute;
+    top: calc(50% + 30px);
+    right: 0;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        top: calc(50% + 50px);
+    }
+}
+
+.o-atelier__city {
+    @include font-title($color-primary);
+    @include absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    .no-touchevents &:hover {
+        color: lighten($color-primary, 5%);
+    }
+}

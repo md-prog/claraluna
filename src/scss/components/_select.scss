@@ -1,0 +1,98 @@
+.c-select {
+    position: relative;
+    width: 100%;
+    min-height: 50px;
+    cursor: pointer;
+
+    @include mq(desktop) {
+        min-height: 62px;
+    }
+}
+
+.c-select__field {
+    visibility: hidden;
+}
+
+.c-select__arrow {
+    @include absolute;
+    top: 50%;
+    left: auto;
+    right: 0;
+    width: 5px;
+    height: 5px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: $color-text;
+    border: 1px solid $color-text;
+    transition: background-color 0.3s ease;
+
+    .is-select-open > &,
+    .t-primary.is-select-open > & {
+        background-color: transparent;
+    }
+
+    // THEME: t-primary
+    .t-primary > & {
+        background-color: $color-white;
+        border: 1px solid $color-white;
+    }
+}
+
+.c-select__placeholder {
+    @include absolute;
+    @include font-geometric;
+    top: 50%;
+    width: 100%;
+    transform: translate3d(0, -50%, 0);
+}
+
+.c-select__options {
+    @include absolute;
+    z-index: z-index(above);
+    top: 100%;
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid rgba($color-black, 0.1);
+    background-color: $color-white;
+    transition: all 0.3s ease-in-out 0.2s;
+
+    .is-select-open & {
+        height: auto;
+        transition: height 0.3s ease-in-out;
+    }
+
+    .has-focus & {
+        border-bottom: 1px solid rgba($color-black, 0.2);
+    }
+
+    // THEME: t-primary
+    .t-primary > & {
+        border-bottom: 1px solid rgba($color-white, 0.3);
+        background-color: $color-primary-dark;
+    }
+
+    .t-primary.has-focus > & {
+        border-bottom: 1px solid rgba($color-white, 0.9);
+    }
+}
+
+.c-select__options ul {
+    padding-bottom: $spacer;
+    visibility: hidden;
+
+    .is-select-open & {
+        visibility: visible;
+    }
+}
+
+.c-select__options li {
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: all 0.3s ease-in-out;
+
+    .is-select-open & {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.3s ease-in-out 0.2s;
+    }
+}

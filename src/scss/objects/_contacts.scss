@@ -1,0 +1,69 @@
+.o-contacts {
+    @include mq(s-tablet) {
+        @include absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        overflow: auto;
+    }
+}
+
+.o-contacts__inner {
+    position: relative;
+    z-index: z-index(above);
+    width: 100%;
+    padding: $spacer;
+
+    @include mq(s-tablet) {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.o-contacts__side {
+    position: relative;
+    text-align: center;
+
+    @include mq(s-tablet) {
+        text-align: left;
+    }
+
+    &:nth-child(1) {
+        @include mq-prop(margin-left, $frame-weight);
+        @include mq-prop(margin-right, $frame-weight);
+        margin-top: map_get($frame-weight, null) * 5;
+
+        @include mq(s-tablet) {
+            flex-basis: 40%;
+            margin-top: 0;
+            padding-left: $spacer;
+        }
+
+        @include mq(desktop) {
+            padding-left: 10%;
+        }
+    }
+
+    &:nth-child(2) {
+        @include mq-prop(margin-left, $frame-weight);
+        @include mq-prop(margin-right, $frame-weight);
+        margin-bottom: map_get($frame-weight, null);
+
+        @include mq(s-tablet) {
+            flex-basis: 60%;
+            margin-bottom: 0;
+            padding-right: $spacer;
+        }
+
+        @include mq(desktop) {
+            padding-right: 10%;
+        }
+    }
+}
+
+.o-contacts__title {
+    margin-bottom: 3rem;
+}

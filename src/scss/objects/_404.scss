@@ -1,0 +1,24 @@
+.o-page-404 {
+    @include absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @include mq-prop((padding-left, padding-right), $frame-weight);
+}
+
+.o-page-404__inner {
+    text-align: center;
+    @include mq-prop((padding-left, padding-right), $frame-weight);
+
+    @include mq(s-tablet) {
+        flex-basis: 50%;
+    }
+
+    @include mq(desktop) {
+        flex-basis: 10%;
+        width: 400px;
+    }
+}

@@ -1,0 +1,10 @@
+.c-heart {
+    display: inline-block;
+    opacity: 1;
+    transition: all 0.7s $power3-ease-in-out;
+}
+
+.c-heart.is-hide {
+    opacity: 0;
+    transform: translateX(-10px);
+}

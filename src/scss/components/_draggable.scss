@@ -1,0 +1,10 @@
+.c-draggable {
+    will-change: transform;
+    cursor: -moz-grab !important;
+    cursor: -webkit-grab !important;
+
+    &.is-grabbing {
+        cursor: -moz-grabbing !important;
+        cursor: -webkit-grabbing !important
+    }
+}

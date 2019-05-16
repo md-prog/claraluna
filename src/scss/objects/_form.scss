@@ -1,0 +1,87 @@
+.o-form__inner {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.o-form__input {
+    width: 100%;
+    padding: 1rem 0;
+    outline: 0;
+    background-color: transparent;
+    border: 0;
+    transition: all 0.3s ease;
+
+    border-radius: 0;
+
+    color: rgba($color-black, 0.5);
+    border-bottom: 1px solid rgba($color-black, 0.1);
+
+    .has-focus > & {
+        border-bottom: 1px solid rgba($color-black, 0.2);
+    }
+
+    .has-error > &,
+    .has-error.t-primary > & {
+        border-bottom: 1px solid rgba($color-error, 0.5);
+    }
+
+    // THEME: t-primary
+    .has-focus.t-primary > & {
+        border-bottom: 1px solid rgba($color-white, 0.9);
+    }
+
+    .t-primary > & {
+        color: $color-white;
+        border-bottom: 1px solid rgba($color-white, 0.3);
+    }
+}
+
+.o-form__input--textarea {
+    min-height: 120px;
+}
+
+.o-form__label {
+    @include absolute;
+    @include font-geometric;
+    pointer-events: none;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translate(0, -50%);
+    transition: all 0.3s ease-out 0.2s;
+
+    @include mq(s-tablet) {
+        right: auto;
+    }
+
+    .has-focus &,
+    .has-error & {
+        transition: all 0.3s ease-in;
+        opacity: 0;
+        transform: translate(0, 0);
+    }
+}
+
+.o-form__label--small {
+    top: 0;
+    font-size: rem(7px);
+
+    transform: translate(0, -100%);
+    opacity: 0;
+    transition: all 0.3s ease-in;
+
+    .has-focus &,
+    .has-error & {
+        transition: all 0.3s ease-out 0.2s;
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+
+    .has-error & {
+        color: $color-error;
+    }
+}
+
+.o-form__label--textarea {
+    top: $spacer * 2;
+}

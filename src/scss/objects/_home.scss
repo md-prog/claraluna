@@ -1,0 +1,15 @@
+.o-home__tips {
+    @include absolute;
+    top: 75%;
+    left: 15%;
+
+    a {
+        font-weight: 700;
+        color: $color-primary;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: $color-text;
+        }
+    }
+}

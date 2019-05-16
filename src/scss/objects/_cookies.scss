@@ -1,0 +1,61 @@
+.o-cookie-bar {
+    @include fixed;
+    @include mq-prop(height, $frame-weight);
+    top: auto;
+    bottom: 0;
+    z-index: z-index(frame) + 2;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $color-white;
+    transition: opacity 0.7s $expo-ease-in-out, transform 0.7s $expo-ease-in-out, visibility 0.7s;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+
+    &.is-visible {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.o-cookie-bar__content {
+    @include mq-prop((height, padding-left, padding-right), $frame-weight);
+    @include font-geometric;
+    font-size: rem(7px);
+    position: relative;
+    float: left;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.o-cookie-bar__text {
+    margin: 0;
+    padding: 0;
+    flex: 1 0 auto;
+    @include mq-prop(line-height, $frame-weight);
+}
+
+.o-cookie-bar__accept-outer {
+    a,
+    button {
+        @include font-geometric;
+        @include mq-prop((height, line-height), $frame-weight);
+        display: inline-block;
+        font-size: rem(7px);
+        font-weight: 700;
+        margin: 0;
+        padding: 0 1rem;
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    a {
+        color: lighten($color-text, 20%);
+    }
+}
