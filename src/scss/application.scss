@@ -1,10 +1,13 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Italiana);
 
+@import "~sass-mq/mq";
+
 @import "./base/mixins";
+@import "variables";
 @import "./base/animations";
 
-@import "~/normalize.css/normalize.css";
+@import "~normalize.css/normalize.css";
 @import "./base/base";
 @import "./objects/app";
 @import "./objects/attitude";

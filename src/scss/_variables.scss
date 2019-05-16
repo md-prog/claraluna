@@ -1,0 +1,54 @@
+$font-family-sans-serif: "acumin-pro", sans-serif;
+$font-family-serif: "Italiana", serif;
+
+$font-size-default: 11px;
+$menu-trigger-font-size: 20px;
+
+$mq-responsive: 1;
+$mq-breakpoints: (
+    "mobile":480, //30em
+    "s-tablet":768, //48em
+    "l-tablet":992, //62em
+    "desktop":1025, //64.0625em
+    "wide":1600 // 100em
+);
+
+$color-text: #999;
+$color-primary: #dbc3b3;
+$color-primary-dark: #d0b9aa;
+$color-default: #cccccc;
+$color-white: #fff;
+$color-black: #000;
+$color-gray: #efefef;
+$color-error: #a74545;
+$color-menu: #eeeeee;
+$color-title-gray: #d9d9d9;
+$color-lite: #bfbfbf;
+$menu-logo-bg: #9f9f9f;
+
+
+$frame-top-weight: (
+    null: 40px,
+    "s-tablet": 60px
+);
+$frame-bg: #fff;
+$frame-weight: (
+    null: 40px,
+    "s-tablet": 40px
+);
+$spacer: 10px;
+
+$power3-ease-in: cubic-bezier(0.74, 0, 0.77, 0.25);
+$power3-ease-out: cubic-bezier(0.23, 1, 0.38, 1);
+$power3-ease-in-out: cubic-bezier(0.69, 0, 0.27, 1);
+
+$expo-ease-in-out: cubic-bezier(0.86, 0.01, 0.14, 1);
+
+$button-ease: ease;
+
+$circle-base: (
+    null: 40px,
+    "s-tablet": 50px
+);
+$ico-circle-base: 36px;
+$circle-mobile-action: 60px;
