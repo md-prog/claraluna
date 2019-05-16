@@ -19,6 +19,3 @@ class Heart extends PureComponent {
 export default Heart;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/Heart.jsx
- **/

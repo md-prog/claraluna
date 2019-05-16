@@ -297,6 +297,3 @@ export function preloadImage(src) {
 
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/utils.js
- **/

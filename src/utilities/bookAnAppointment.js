@@ -111,6 +111,3 @@ export const sendData = (book, bookAtelier, bookName, bookMail, bookPhone, bookD
 };
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/bookAnAppointment.js
- **/

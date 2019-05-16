@@ -76,6 +76,3 @@ class ShareToggle extends PureComponent {
 export default ShareToggle;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Share/ShareButtons.jsx
- **/

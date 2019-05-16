@@ -61,6 +61,3 @@ export default function http(url, lang) {
 }
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/apiCall.js
- **/

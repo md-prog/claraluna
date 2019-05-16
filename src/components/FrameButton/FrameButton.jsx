@@ -132,6 +132,3 @@ FrameButton.propTypes = {
 export default FrameButton;
 
 
-/** WEBPACK FOOTER **
- ** ./components/FrameButton/FrameButton.jsx
- **/

@@ -148,6 +148,3 @@ class Loader extends PureComponent {
 export default Loader;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Loader/Loader.jsx
- **/

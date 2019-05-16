@@ -52,6 +52,3 @@ class CollectionProgress extends PureComponent {
 export default CollectionProgress;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionProgress.jsx
- **/

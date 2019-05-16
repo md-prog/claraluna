@@ -89,6 +89,3 @@ class SocialItem extends PureComponent {
 export default SocialItem;
 
 
-/** WEBPACK FOOTER **
- ** ./components/SocialWall/SocialItem.jsx
- **/

@@ -24,6 +24,3 @@ class DepartmentThumb extends PureComponent {
 export default DepartmentThumb;
 
 
-/** WEBPACK FOOTER **
- ** ./components/People/DepartmentThumb.jsx
- **/

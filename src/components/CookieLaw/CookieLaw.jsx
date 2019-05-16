@@ -24,6 +24,3 @@ class CookieLaw extends PureComponent {
 export default CookieLaw;
 
 
-/** WEBPACK FOOTER **
- ** ./components/CookieLaw/CookieLaw.jsx
- **/

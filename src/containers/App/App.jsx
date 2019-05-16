@@ -646,6 +646,3 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 
-/** WEBPACK FOOTER **
- ** ./containers/App/App.jsx
- **/

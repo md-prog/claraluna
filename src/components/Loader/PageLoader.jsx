@@ -29,6 +29,3 @@ class PageLoader extends PureComponent {
 export default PageLoader;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Loader/PageLoader.jsx
- **/

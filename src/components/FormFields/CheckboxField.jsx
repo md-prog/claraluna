@@ -22,6 +22,3 @@ class CheckboxField extends PureComponent {
 export default CheckboxField;
 
 
-/** WEBPACK FOOTER **
- ** ./components/FormFields/CheckboxField.jsx
- **/

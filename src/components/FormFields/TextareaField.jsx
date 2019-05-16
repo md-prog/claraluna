@@ -52,6 +52,3 @@ class TextareaField extends PureComponent {
 export default TextareaField;
 
 
-/** WEBPACK FOOTER **
- ** ./components/FormFields/TextareaField.jsx
- **/

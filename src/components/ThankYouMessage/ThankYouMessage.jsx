@@ -34,6 +34,3 @@ class ThankYouMessage extends PureComponent {
 export default ThankYouMessage;
 
 
-/** WEBPACK FOOTER **
- ** ./components/ThankYouMessage/ThankYouMessage.jsx
- **/

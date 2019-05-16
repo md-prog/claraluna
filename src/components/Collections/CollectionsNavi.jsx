@@ -67,6 +67,3 @@ class CollectionNavi extends PureComponent {
 export default CollectionNavi;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionsNavi.jsx
- **/

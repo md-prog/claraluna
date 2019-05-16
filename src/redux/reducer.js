@@ -42,6 +42,3 @@ export default combineReducers({
 });
 
 
-/** WEBPACK FOOTER **
- ** ./redux/reducer.js
- **/

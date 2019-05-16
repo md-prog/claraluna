@@ -11,6 +11,3 @@ class PureComponent extends Component {
 export default PureComponent;
 
 
-/** WEBPACK FOOTER **
- ** ./components/PureComponent.jsx
- **/

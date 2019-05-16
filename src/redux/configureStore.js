@@ -29,6 +29,3 @@ export default function configureStore(initialState, history) {
 
 
 
-/** WEBPACK FOOTER **
- ** ./redux/configureStore.js
- **/

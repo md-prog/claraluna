@@ -69,6 +69,3 @@ class CollectionMobileActions extends PureComponent {
 export default CollectionMobileActions;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionMobileActions.jsx
- **/

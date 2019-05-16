@@ -93,6 +93,3 @@ export const COOKIE_ACCEPT = 'COOKIE_ACCEPT';
 export const COOKIE_SHOW = 'COOKIE_SHOW';
 
 
-/** WEBPACK FOOTER **
- ** ./constants/index.js
- **/

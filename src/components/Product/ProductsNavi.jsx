@@ -55,6 +55,3 @@ class ProductsNavi extends PureComponent {
 export default ProductsNavi;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Product/ProductsNavi.jsx
- **/

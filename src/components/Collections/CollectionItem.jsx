@@ -264,6 +264,3 @@ class CollectionItem extends PureComponent {
 export default CollectionItem;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionItem.jsx
- **/

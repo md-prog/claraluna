@@ -16,6 +16,3 @@ export const getUrlLang = (lang) => (lang === LANG_DE) ? '/de' : '';
 export const getPage = (pages, name) => pages ? pages.find(p => p.name === name) || {} : {};
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/pages.js
- **/

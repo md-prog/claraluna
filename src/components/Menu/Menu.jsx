@@ -166,6 +166,3 @@ Menu.propTypes = {
 export default Menu;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Menu/Menu.jsx
- **/

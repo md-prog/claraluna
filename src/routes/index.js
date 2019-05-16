@@ -109,6 +109,3 @@ export default routes;
 
 
 
-/** WEBPACK FOOTER **
- ** ./routes/index.js
- **/

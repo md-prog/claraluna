@@ -121,6 +121,3 @@ HomeSwitcher.propTypes = {
 export default HomeSwitcher;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Home/HomeSwitcher.jsx
- **/

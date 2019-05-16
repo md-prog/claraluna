@@ -39,8 +39,3 @@ AtelierFooter.protoType = {
 };
 
 export default AtelierFooter;
-
-
-/** WEBPACK FOOTER **
- ** ./components/Atelier/AtelierFooter.jsx
- **/

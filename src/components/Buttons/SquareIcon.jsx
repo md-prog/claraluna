@@ -18,6 +18,3 @@ class SquareIcon extends PureComponent {
 export default SquareIcon;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Buttons/SquareIcon.jsx
- **/

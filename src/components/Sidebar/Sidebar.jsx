@@ -29,6 +29,3 @@ class Sidebar extends PureComponent {
 export default Sidebar;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Sidebar/Sidebar.jsx
- **/

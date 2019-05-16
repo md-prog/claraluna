@@ -18,6 +18,3 @@ class Cell extends PureComponent {
 export default Cell;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Cell/Cell.jsx
- **/

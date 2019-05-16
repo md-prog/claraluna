@@ -73,6 +73,3 @@ class BackgroundImage extends PureComponent {
 export default BackgroundImage;
 
 
-/** WEBPACK FOOTER **
- ** ./components/ContactForm/ContactForm.jsx
- **/

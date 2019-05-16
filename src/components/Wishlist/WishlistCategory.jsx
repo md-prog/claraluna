@@ -24,6 +24,3 @@ WishlistCategory.propsType = {
 export default WishlistCategory;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistCategory.jsx
- **/

@@ -18,6 +18,3 @@ class WishlistMessage extends PureComponent {
 export default WishlistMessage;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistMessage.jsx
- **/

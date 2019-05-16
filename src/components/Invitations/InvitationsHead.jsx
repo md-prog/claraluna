@@ -50,6 +50,3 @@ InvitationsHead.propTypes = {
 export default InvitationsHead;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Invitations/InvitationsHead.jsx
- **/

@@ -8,6 +8,3 @@ const getSeoInformation = (seoDB, id, type, url) => {
 export default getSeoInformation;
 
 
-/** WEBPACK FOOTER **
- ** ./routes/seoInformations.js
- **/

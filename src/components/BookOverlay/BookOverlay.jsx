@@ -186,6 +186,3 @@ BookOverlay.propTypes = {
 export default BookOverlay;
 
 
-/** WEBPACK FOOTER **
- ** ./components/BookOverlay/BookOverlay.jsx
- **/

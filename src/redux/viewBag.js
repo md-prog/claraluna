@@ -27,6 +27,3 @@ export default function reducer(state = { $internal: false }, action = {}) {
 
 
 
-/** WEBPACK FOOTER **
- ** ./redux/viewBag.js
- **/

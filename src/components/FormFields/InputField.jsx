@@ -64,6 +64,3 @@ class InputField extends PureComponent {
 export default InputField;
 
 
-/** WEBPACK FOOTER **
- ** ./components/FormFields/InputField.jsx
- **/

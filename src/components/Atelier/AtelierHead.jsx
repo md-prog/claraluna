@@ -42,8 +42,3 @@ AtelierHead.propTypes = {
 };
 
 export default AtelierHead;
-
-
-/** WEBPACK FOOTER **
- ** ./components/Atelier/AtelierHead.jsx
- **/

@@ -33,6 +33,3 @@ class Logo extends PureComponent {
 export default Logo;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Logo/Logo.jsx
- **/

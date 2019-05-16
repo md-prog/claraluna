@@ -113,9 +113,3 @@ Cities.propTypes = {
 };
 
 export default Cities;
-
-
-
-/** WEBPACK FOOTER **
- ** ./components/Atelier/Cities.jsx
- **/

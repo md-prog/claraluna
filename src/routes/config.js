@@ -13,6 +13,3 @@ export default {
 
 
 
-/** WEBPACK FOOTER **
- ** ./routes/config.js
- **/

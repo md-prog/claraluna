@@ -17,6 +17,3 @@ class CircleIcon extends PureComponent {
 export default CircleIcon;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Buttons/CircleIcon.jsx
- **/

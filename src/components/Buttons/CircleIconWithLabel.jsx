@@ -69,6 +69,3 @@ class CircleIconWithLabel extends PureComponent {
 export default CircleIconWithLabel;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Buttons/CircleIconWithLabel.jsx
- **/

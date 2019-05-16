@@ -74,6 +74,3 @@ class ProductThumb extends PureComponent {
 export default ProductThumb;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Product/ProductThumb.jsx
- **/

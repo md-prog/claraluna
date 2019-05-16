@@ -101,6 +101,3 @@ Zoom.propTypes = {
 export default Zoom;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Zoom/Zoom.jsx
- **/

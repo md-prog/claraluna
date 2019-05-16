@@ -38,6 +38,3 @@ class CollectionThumb extends PureComponent {
 export default CollectionThumb;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionThumb.jsx
- **/

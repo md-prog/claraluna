@@ -12,6 +12,3 @@ class HomeTips extends PureComponent {
 export default HomeTips;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Home/HomeTips.jsx
- **/

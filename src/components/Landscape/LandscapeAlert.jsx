@@ -21,6 +21,3 @@ class LandscapeAlert extends PureComponent {
 export default LandscapeAlert;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Landscape/LandscapeAlert.jsx
- **/

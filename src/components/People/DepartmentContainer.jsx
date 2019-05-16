@@ -28,6 +28,3 @@ class DepartmentContainer extends PureComponent {
 export default DepartmentContainer;
 
 
-/** WEBPACK FOOTER **
- ** ./components/People/DepartmentContainer.jsx
- **/

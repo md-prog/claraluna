@@ -45,6 +45,3 @@ export default Box;
 
 
 
-/** WEBPACK FOOTER **
- ** ./components/Box/Box.jsx
- **/

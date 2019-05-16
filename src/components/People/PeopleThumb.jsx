@@ -41,6 +41,3 @@ class PeopleThumb extends PureComponent {
 export default PeopleThumb;
 
 
-/** WEBPACK FOOTER **
- ** ./components/People/PeopleThumb.jsx
- **/

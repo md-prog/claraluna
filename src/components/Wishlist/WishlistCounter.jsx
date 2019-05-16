@@ -17,6 +17,3 @@ class WishlistCounter extends PureComponent {
 export default WishlistCounter;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistCounter.jsx
- **/

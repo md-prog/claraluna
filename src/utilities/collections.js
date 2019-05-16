@@ -65,6 +65,3 @@ export const getProductsFromIdArray = (products, arrayOfId) => {
 };
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/collections.js
- **/

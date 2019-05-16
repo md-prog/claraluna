@@ -18,6 +18,3 @@ class Counter extends PureComponent {
 export default Counter;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Counter/Counter.jsx
- **/

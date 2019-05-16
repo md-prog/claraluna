@@ -53,6 +53,3 @@ InvitationsContainer.propTypes = {
 export default InvitationsContainer;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Invitations/InvitationsContainer.jsx
- **/

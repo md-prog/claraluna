@@ -372,6 +372,3 @@ class SingleProduct extends PureComponent {
 export default SingleProduct;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Product/SingleProduct.jsx
- **/

@@ -18,6 +18,3 @@ export default BackgroundImage;
 
 
 
-/** WEBPACK FOOTER **
- ** ./components/BackgroundImage/BackgroundImage.jsx
- **/

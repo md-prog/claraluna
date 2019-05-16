@@ -269,6 +269,3 @@ export default [
 ];
 
 
-/** WEBPACK FOOTER **
- ** ./constants/googleMapsStyle.js
- **/

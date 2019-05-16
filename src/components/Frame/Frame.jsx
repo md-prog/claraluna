@@ -11,6 +11,3 @@ class Frame extends PureComponent {
 export default Frame;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Frame/Frame.jsx
- **/

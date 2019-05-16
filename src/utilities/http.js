@@ -62,6 +62,3 @@ export default function http(url) {
 }
 
 
-/** WEBPACK FOOTER **
- ** ./utilities/http.js
- **/

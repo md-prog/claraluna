@@ -32,6 +32,3 @@ export default CollectionDesktopActions;
 
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionDesktopActions.jsx
- **/

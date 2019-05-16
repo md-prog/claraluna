@@ -75,6 +75,3 @@ class SelectField extends PureComponent {
 export default SelectField;
 
 
-/** WEBPACK FOOTER **
- ** ./components/FormFields/SelectField.jsx
- **/

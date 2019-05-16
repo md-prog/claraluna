@@ -106,6 +106,3 @@ class DraggableWrapper extends PureComponent {
 export default DraggableWrapper;
 
 
-/** WEBPACK FOOTER **
- ** ./components/DraggableWrapper/DraggableWrapper.jsx
- **/

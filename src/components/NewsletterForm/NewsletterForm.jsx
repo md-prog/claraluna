@@ -63,6 +63,3 @@ class NewsletterForm extends PureComponent {
 export default NewsletterForm;
 
 
-/** WEBPACK FOOTER **
- ** ./components/NewsletterForm/NewsletterForm.jsx
- **/

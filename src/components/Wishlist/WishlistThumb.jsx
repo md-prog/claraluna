@@ -40,6 +40,3 @@ WishlistThumb.propTypes = {
 export default WishlistThumb;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistThumb.jsx
- **/

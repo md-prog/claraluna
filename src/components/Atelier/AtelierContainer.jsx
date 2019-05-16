@@ -128,8 +128,3 @@ AtelierContainer.propTypes = {
 };
 
 export default AtelierContainer;
-
-
-/** WEBPACK FOOTER **
- ** ./components/Atelier/AtelierContainer.jsx
- **/

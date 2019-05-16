@@ -96,6 +96,3 @@ PageContainer.propTypes = {
 export default PageContainer;
 
 
-/** WEBPACK FOOTER **
- ** ./containers/PageContainer.jsx
- **/

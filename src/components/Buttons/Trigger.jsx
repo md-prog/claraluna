@@ -21,6 +21,3 @@ class Trigger extends PureComponent {
 export default Trigger;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Buttons/Trigger.jsx
- **/

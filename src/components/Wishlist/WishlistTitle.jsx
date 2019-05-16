@@ -13,6 +13,3 @@ class WishlistTitle extends PureComponent {
 export default WishlistTitle;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistTitle.jsx
- **/

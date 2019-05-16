@@ -217,6 +217,3 @@ class SingleCollection extends PureComponent {
 export default SingleCollection;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/SingleCollection.jsx
- **/

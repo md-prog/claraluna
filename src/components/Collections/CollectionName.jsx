@@ -61,6 +61,3 @@ class CollectionName extends PureComponent {
 export default CollectionName;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionName.jsx
- **/

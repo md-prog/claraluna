@@ -76,6 +76,3 @@ WishlistGrid.propTypes = {
 export default WishlistGrid;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Wishlist/WishlistGrid.jsx
- **/

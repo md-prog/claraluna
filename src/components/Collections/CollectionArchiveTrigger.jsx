@@ -20,6 +20,3 @@ class CollectionArchiveTrigger extends PureComponent {
 export default CollectionArchiveTrigger;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Collections/CollectionArchiveTrigger.jsx
- **/

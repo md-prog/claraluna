@@ -25,8 +25,3 @@ class AtelierThumb extends PureComponent {
 }
 
 export default AtelierThumb;
-
-
-/** WEBPACK FOOTER **
- ** ./components/Atelier/AtelierThumb.jsx
- **/

@@ -173,6 +173,3 @@ class ProductGallery extends PureComponent {
 export default ProductGallery;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Product/ProductGallery.jsx
- **/

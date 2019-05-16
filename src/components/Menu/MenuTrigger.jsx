@@ -36,6 +36,3 @@ class MenuTrigger extends PureComponent {
 export default MenuTrigger;
 
 
-/** WEBPACK FOOTER **
- ** ./components/Menu/MenuTrigger.jsx
- **/
