@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import '@babel/polyfill';
 import SmoothScroll from 'smoothscroll-for-websites';
 window.SmoothScroll = SmoothScroll;
 

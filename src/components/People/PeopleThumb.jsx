@@ -2,7 +2,7 @@ import React from 'react';
 import PureComponent from '../PureComponent.jsx';
 import { findDOMNode } from 'react-dom';
 
-import SplitText from 'gsap/src/uncompressed/utils/SplitText';
+import SplitText from '../../vendor/gsap/utils/SplitText';
 class PeopleThumb extends PureComponent {
 
     componentDidMount() {

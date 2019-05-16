@@ -24,7 +24,7 @@ import { showCookie, acceptCookie } from '../../components/CookieLaw/actions-coo
 
 // Components
 import { TweenMax } from 'gsap';
-import SplitText from 'gsap/src/uncompressed/utils/SplitText';
+import SplitText from '../../vendor/gsap/utils/SplitText';
 import Menu from '../../components/Menu/Menu.jsx';
 import Loader from '../../components/Loader/Loader.jsx';
 import PageLoader from '../../components/Loader/PageLoader.jsx';

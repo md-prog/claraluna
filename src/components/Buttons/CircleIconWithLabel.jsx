@@ -2,7 +2,7 @@ import React from 'react';
 import PureComponent from '../PureComponent.jsx';
 import { findDOMNode } from 'react-dom';
 import {TweenMax, TimelineMax} from 'gsap';
-import SplitText from 'gsap/src/uncompressed/utils/SplitText';
+import SplitText from '../../vendor/gsap/utils/SplitText';
 
 // Utilities
 import { bindFunctions } from '../../utilities/utils';

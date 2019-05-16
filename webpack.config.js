@@ -2,7 +2,8 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    entry: ['./src/index.js', './src/scss/application.scss'],
+    mode: 'development',
+    entry: ['./src/app.js', './src/scss/application.scss'],
     output: {
         path: path.join(__dirname, 'public/asset/js'),
         publicPath: '/asset/js',
@@ -10,13 +11,12 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env'],
-                    plugins: ['@babel/plugin-transform-runtime']
+                    presets: ['@babel/preset-react']
                 }
             }
         }, {

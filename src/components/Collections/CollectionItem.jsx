@@ -6,7 +6,7 @@ import { findDOMNode } from 'react-dom';
 
 // Components
 import {TweenMax, TimelineMax} from 'gsap';
-import SplitText from 'gsap/src/uncompressed/utils/SplitText';
+import SplitText from '../../vendor/gsap/utils/SplitText';
 import Swipeable from 'react-swipeable';
 import BackgroundImage from '../BackgroundImage/BackgroundImage.jsx';
 import SingleCollection from './SingleCollection.jsx';

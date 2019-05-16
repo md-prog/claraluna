@@ -15,7 +15,7 @@ import Helmet from 'react-helmet';
 import Sidebar from '../../components/Sidebar/Sidebar.jsx';
 import googleMapsStyle from '../../constants/googleMapsStyle';
 import { GoogleMapLoader, GoogleMap, InfoWindow, Marker, SearchBox } from 'react-google-maps';
-import { default as MarkerClusterer } from 'react-google-maps/lib/addons/MarkerClusterer';
+import { default as MarkerClusterer } from 'react-google-maps/lib/components/addons/MarkerClusterer';
 
 // Actions Creators
 import { hidePageLoader } from '../../components/Loader/actions-PageLoader';

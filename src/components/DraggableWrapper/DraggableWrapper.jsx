@@ -5,8 +5,8 @@ import { findDOMNode } from 'react-dom';
 import { bindFunctions, throttle } from '../../utilities/utils';
 
 import { TweenMax } from 'gsap';
-import Draggable from 'gsap/src/uncompressed/utils/Draggable';
-import ThrowPropsPlugin from 'gsap/src/uncompressed/plugins/ThrowPropsPlugin';
+import Draggable from '../../vendor/gsap/utils/Draggable';
+import ThrowPropsPlugin from '../../vendor/gsap/plugins/ThrowPropsPlugin';
 
 class DraggableWrapper extends PureComponent {
 
